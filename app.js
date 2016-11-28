@@ -1,6 +1,6 @@
 var mongo = require('mongodb');
 var mongoClient = mongo.MongoClient;
-var dbUrl = 'mongodb://127.0.0.1:27017/sampledb';
+var dbUrl = 'mongodb://madhu:smsc@127.0.0.1:27017/sampledb';
 getAllContacts();
 function getAllContacts()
 {
