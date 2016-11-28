@@ -3,7 +3,7 @@ var mongoClient = mongodb.MongoClient;
 var dbUrl = 'mongodb://127.0.0.1:27017/sampledb';
 function getAllContacts()
 {
-	mongoClient.connect(dbUrl, function(err, db)
+	mongoClient.connect(dbUrl, function(err, db){
 		if(err)
 		{
 			console.log("Error connecting database : " + (err || "error message is null"));
@@ -24,8 +24,8 @@ function getAllContacts()
 				else
 					console.log("No documents found for selected criteria");
 			})
-		}
-	)
+		}		
+	})
 }
 mongoClient.connect(dbUrl, function(err, db){
 	if(err){
