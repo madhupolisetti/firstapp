@@ -1,6 +1,7 @@
 var mongo = require('mongodb');
 var mongoClient = mongo.MongoClient;
 var dbUrl = 'mongodb://127.0.0.1:27017/sampledb';
+getAllContacts();
 function getAllContacts()
 {
 	mongoClient.connect(dbUrl, function(err, db){
@@ -23,21 +24,8 @@ function getAllContacts()
 				}
 				else
 					console.log("No documents found for selected criteria");
-			})
-		}		
+			});
+			db.close();
+		}
 	})
 }
-mongoClient.connect(dbUrl, function(err, db){
-	if(err){
-		console.log("Error connecting database " + err || 'ErrorMessage is null');
-	}
-	else
-	{
-		var contacts = db.collection('contacts');
-		for(var index = 0; index < contacts.length; index++)
-		{
-			
-		}
-		db.close();
-	}	
-})
